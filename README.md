@@ -28,7 +28,7 @@ $ git clone git+https://github.com/library-ucsb/this-repo.git
 
 ```
 $ cd this-repo
-$ cd terriform
+$ cd terraform
 ```
 
 Update `default.auto.tfvars` with new values.

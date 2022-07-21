@@ -9,7 +9,7 @@ module "github_repository" {
 }
 
 resource "github_branch_default" "main" {
-    name                    = module.github_repository.name
+    repository              = module.github_repository.name
     branch                  = "main"  
 }
 
