@@ -1,6 +1,8 @@
 temp/*
 .terraform/
 .terraform/*
+terraform.tfstate*
+
 
 cache/*
 ansible_collections/*
