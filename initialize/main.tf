@@ -8,6 +8,11 @@ module "github_repository" {
   is_template               = true
 }
 
+resource "github_branch_default" "main" {
+    name                    = module.github_repository.name
+    branch                  = "main"  
+}
+
 output "github_repository" {
     value = module.github_repository
 }
