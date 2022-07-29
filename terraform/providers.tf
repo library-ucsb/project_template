@@ -1,20 +1,26 @@
 terraform {
   required_providers {
     github = {
-      source = "integrations/github"
-      version = "4.26.1"
+      source      = "integrations/github"
+      version     = "4.26.1"
     }
     aws = {
-      source = "hashicorp/aws"
-      version = "4.22.0"
+      source      = "hashicorp/aws"
+      version     = "4.22.0"
     }
   }
 }
 
 provider "github" {
-  owner = var.repo.github_organization
+  owner           = var.repo.github_organization
 }
 
 provider "aws" {
-  region = var.aws_region
+  region          = var.aws_region
+
+  assume_role {
+    role_arn      = "arn:aws:iam::406663345920:role/ucsb-role-terraform-full"
+    region        = var.aws_region
+    duration      = "30m"
+  }
 }

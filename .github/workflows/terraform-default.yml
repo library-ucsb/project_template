@@ -23,6 +23,14 @@ jobs:
       VMWARE_PASSWORD: ${{ secrets.VMWARE_PASSWORD }}
 
     steps:
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::406663345920:role/ucsb-role-terraform-full
+          aws-region: us-west-2
+          role-duration-seconds: 600
+
       - name: checkout branch
         uses: actions/checkout@v3
 
