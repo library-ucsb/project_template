@@ -57,7 +57,7 @@ jobs:
           
           cd ansible
           mkdir logs
-          ansible-playbook --inventory=inventory.yml site.yml \
+          ansible-playbook --inventory=inventory.vmware.yml site.yml \
                            --vault-password-file=ansible-vault-password-file.txt \
                            --user=ansible-deploy \
                            --private-key=ansible-ssh-private-key \
